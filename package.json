@@ -1,16 +1,22 @@
 {
-  "name": "gen",
+  "name": "React-Electron-Base",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "electron": "^2.0.7",
     "foreman": "^3.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4"
   },
-  "main": "src/electron-starter.js",
+  "main": "public/electron.js",
   "homepage": "./",
+  "build": {
+    "appId": "react.electron.base.id",
+    "mac": {
+      "category": "your.app.category.type",
+      "icon": "./public/react.png.icns"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "dev": "nf start",
@@ -18,9 +24,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
+    "electron-dev": "ELECTRON_START_URL=http://localhost:5000 electron .",
+    
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "devDependencies": {
+    "electron": "^2.0.7",
     "electron-builder": "^20.27.1"
   }
 }
